@@ -1,29 +1,60 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-app = express();
+var express = require("express"),
+    app = express(),
+    pg = require("pg"),
+    path = require("path");
 
-// ejsを使用するための設定
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// トップ画面
-app.get('/', function(req, res) {
-    // index.ejsの拡張子は省略可能
-    res.render('index', {title : 'タイトル'});
+    app.get('/db', function (request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+       client.query('SELECT * FROM test_table', function(err, result) {
+            done();
+        if (err)
+        { console.error(err); response.send("Error " + err); }
+        else
+        { response.render('pages/db', {results: result.rows} ); }
+        });
+    });
 });
 
-// "/about"でアクセスしてきた時の処理
-app.get('/about', function(req, res) {
-    res.send('about this page');
+app.set("port", (process.env.PORT || 5000));
+
+/*
+* PG Client connection
+*/
+pg.defaults.ssl = true;
+
+var dbString = process.env.DATABASE_URL;
+
+var sharedPgClient;
+
+pg.connect(dbString, function(err,client){
+    if(err){
+        console.error("PG Connection Error")
+    }
+    console.log("Connected to Postgres");
+    sharedPgClient = client;
 });
 
-app.post('/create', function(req, res) {
-    console.log(req.body);
-    res.send(req.body.name);
+/*
+ * ExpressJS View Templates
+ */
+app.set("views", path.join(__dirname, "./app/views"));
+app.set("view engine", "ejs");
+
+/*
+ * Jobs Landing Page
+ */
+app.get("/",function defaultRoute(req, res){
+    var query = "SELECT * FROM salesforce.HerokuConnectTest__c";
+    var result = [];
+    sharedPgClient.query(query, function(err, result){
+        console.log("Jobs Query Result Count: " + result.rows.length);
+        res.render("index.ejs", {connectResults: result.rows});
+    });
 });
 
-// 3000ポートで待ち受ける
-app.listen(process.env.PORT || 3000);
-console.log('server starting...');
+/*
+ * Run Server
+ */
+var server = app.listen(app.get('port'), function(){
+    console.log('Node Connect App Running at http://%s:%s', server.address().address, server.address().port);
+}
