@@ -1,5 +1,21 @@
 {
-  "name": "Heroku NodeJS Sample",
-  "description": "これはNodeJSで作成されたサンプルのHerokuアプリです。",
-  "repository": "https://github.com/yurikooo/heroku-nodejs-sample.git"
+  "name": "iso-react-docker",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
