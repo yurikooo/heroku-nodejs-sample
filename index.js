@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 /*
  * ExpressJS View Templates
  */
-app.set('views', __dirname + './app/views');
+app.use('views', __dirname + './app/views');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
