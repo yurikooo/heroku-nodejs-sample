@@ -29,7 +29,7 @@ app.use(bodyParser.json());
  * ExpressJS View Templates
  */
 app.set("views", path.join(__dirname, "./app/views"));
-app.set("view engine", "ejs");
+
 /*
  * Jobs Landing Page
  */
