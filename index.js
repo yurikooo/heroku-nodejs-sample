@@ -29,7 +29,10 @@ app.use(bodyParser.json());
  * ExpressJS View Templates
  */
 app.set('views', __dirname + './app/views');
-
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 /*
  * Jobs Landing Page
  */
