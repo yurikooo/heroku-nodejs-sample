@@ -19,25 +19,31 @@ const client = new Client({
 });
 client.connect();
 
-app.use(express.static(__dirname + '/public'));
+/*
+ * ExpressJS View Templates
+ */
+app.set('views', __dirname + './app/views');
+// templateNameで拡張子が省略された場合のデフォルト拡張子
+app.set('view engine', 'ejs');
+app.use('/public',express.static(__dirname + '/public'));
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 
-/*
- * ExpressJS View Templates
- */
-app.set("views", path.join(__dirname, "./app/views"));
+
 
 /*
  * Jobs Landing Page
  */
-app.get("/",function (req, res){
+app.get('/',function (req, res){
     var query = 'SELECT * FROM salesforce.HerokuConnectTest__c';
     var result = [];
     client.query(query, function(err, result){
         console.log("Jobs Query Result Count: " + result.rows.length);
-        res.render("index", {connectResults: result.rows});
+
+        // レンダリング実行
+        res.render('index', {connectResults: result.rows});
     });
 });
