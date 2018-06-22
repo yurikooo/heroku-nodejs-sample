@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="salesforce-lightning-design-system.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>東京海上</title>
+  </head>
+
+  <body>
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-no-row-hover">
+  <p><%= connectResults[1].name %></p>
+  <p><%= connectResults[1].testtext__c %></p>
+
+
+        <div class="l-flex">
+            <div class="nav">
+                <div class="nav-header">
+                    <div class="slds-global-header slds-grid slds-grid_align-spread">
+                        <div class="slds-global-header__item l-flex">
+                            <div class="nav-header-logo">{!v.logo}</div>
+                            <div><lightning:buttonIcon iconName="utility:rows" variant="bare" size="large" alternativeText="Toggle menu" iconClass="nav-header-menu-icon" /></div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="nav-body">
+                    {!v.customNav}
+                </div>
+            </div>
+            <div class="main">
+                <div class="main-header">
+                    <div class="slds-global-header slds-grid slds-grid_align-spread">
+                        <div class="slds-global-header__item slds-global-header__item_search">
+                            {!v.search}
+                        </div>
+                        <ul class="slds-global-header__item slds-grid slds-grid_vertical-align-center">
+                            <li class="slds-dropdown-trigger slds-dropdown-trigger_click" style="margin-right: 16px;">
+                               <lightning:buttonIcon iconName="utility:notification" variant="bare" size="large" alternativeText="Notification" />
+                            </li>
+                             <li class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                               <lightning:buttonIcon iconName="utility:email" variant="bare" size="large" alternativeText="Notification" />
+                            </li>
+                            <li class="slds-dropdown-trigger slds-dropdown-trigger_click slds-m-left_x-small">
+                                {!v.profileMenu}
+                            </li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="main-body">
+                    {!v.body}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+  <div class="slds-grid slds-wrap">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-no-row-hover">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="名前">名前</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="前回レビュー">前回レビュー</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="前回接触">前回接触</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="状況">状況</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="担当者">担当者</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="信頼度">信頼度</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="レビュー頻度">レビュー頻度</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table> 
+      </div>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- lightning design sysytem CSS -->
+    <link rel="stylesheet" type="text/css" href="salesforce-lightning-design-system.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/dashboard.css" rel="stylesheet" />
+
+
+    <title>東京海上</title>
+  </head>
+  <body>
+
+   <div class="l-flex">
+      <div class="nav">
+        <div class="nav-header">
+          <div class="slds-global-header slds-grid slds-grid_align-spread">
+            <div class="slds-global-header__item l-flex">
+              <!-- ロゴ-->
+              <div>
+              <img src="/images/header_logo.png" class="nav-header-logo rounded float-left" alt=" 東京海上日動"></div>
+                      <!-- ハンバーガーマーク--> 
+                            <div><lightning:buttonIcon iconName="utility:rows" variant="bare" size="small" alternativeText="Toggle menu" iconClass="nav-header-menu-icon" /></div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="nav-body">
+                     <!--サイドナビゲーションバー -->
+            <nav id="navbar-example3" class="navbar navbar-light flex-column">
+                <nav class="nav nav-pills flex-column">
+    <div class="section" data-aura-rendered-by="3:30;a">
+      <div class="section-label">
+        <div class="slds-nav-vertical__section">
+         <!-- 選択した場合のバックカラー-->
+          <a href="javascript:void(0);" aria-current="false" class="slds-nav-vertical__action">         
+          <h2 class="slds-text-title_caps">業務
+          <svg aria-hidden="true" class="slds-icon--x-small slds-icon-text-default"><use xlink:href="utility-sprite/svg/symbols.svg#chevrondown">
+          </use></svg></h2></a>
+        </div>
+
+        <div class="slds-nav-vertical__section">
+          <a href="javascript:void(0);" aria-current="false" class="slds-nav-vertical__action">         
+            <svg aria-hidden="true" class="slds-icon--x-small slds-icon-text-default"><use xlink:href="utility-sprite/svg/symbols.svg#chart">
+          </use></svg>ダッシュボード
+          <lightning-badge class="slds-badge">2</lightning-badge>
+          </h2></a>
+        </div>
+
+          <a href="javascript:void(0);" aria-current="false" class="slds-nav-vertical__action">
+          <h2 class="slds-text-title_caps">
+            <svg aria-hidden="true" class="slds-icon--x-small slds-icon-text-default"><use xlink:href="utility-sprite/svg/symbols.svg#note">
+          </use></svg>タスク管理
+        </a>
+</div>
+
+
+
+  <!--render facet: 16:30;a-->
+  <div class="item" data-aura-rendered-by="18:30;a"><!--render facet: 19:30;a-->
+    <div class="item-label" data-aura-rendered-by="21:30;a">
+      <li data-aura-rendered-by="22:30;a" class="slds-nav-vertical__item" is="lightning-vertical-navigation-item-icon">
+        <a href="javascript:void(0);" aria-current="false" class="slds-nav-vertical__action">
+          <lightning-icon class="slds-icon-utility-chart slds-m-right_x-small slds-line-height_reset slds-icon_container">
+    <lightning-primitive-icon lightning-primitive-icon_primitive-icon="">
+    <svg focusable="false" data-key="chart" aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon_x-small" lightning-primitive-icon_primitive-icon="">
+<use xlink:href="http://www.lightningdesignsystem.com/assets/icons/utility-sprite/svg/symbols.svg?cache=9.8.0#chart" lightning-primitive-icon_primitive-icon=""></use>
+</svg></lightning-primitive-icon></lightning-icon>ダッシュボード</a></li></div>
+
+<div class="item-badge" data-aura-rendered-by="24:30;a"><lightning-badge data-aura-rendered-by="25:30;a" class="slds-badge">2</lightning-badge></div></div></div>
+        <a class="ml-2 my-1" href="#item-1-1">タスク管理</a>
+        <a class="ml-3 my-1" href="#item-1-2">プロセス管理</a>
+      <a class="nav-link" href="#item-2">学習ツール</a>
+      <a class="nav-link" href="#item-3">マーケティングツール</a>
+      <a class="nav-link" href="#item-4">代理店経営</a>
+
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+        <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+      </nav>
+  </nav>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main-header">
+                    <div class="slds-global-header slds-grid slds-grid_align-spread">
+                        <div class="slds-global-header__item slds-global-header__item_search">
+                            {!v.search}
+                        </div>
+                        <ul class="slds-global-header__item slds-grid slds-grid_vertical-align-center">
+                            <li class="slds-dropdown-trigger slds-dropdown-trigger_click" style="margin-right: 16px;">
+                               <lightning:buttonIcon iconName="utility:notification" variant="bare" size="large" alternativeText="Notification" />
+                            </li>
+                             <li class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                               <lightning:buttonIcon iconName="utility:email" variant="bare" size="large" alternativeText="Notification" />
+                            </li>
+                            <li class="slds-dropdown-trigger slds-dropdown-trigger_click slds-m-left_x-small">
+                                {!v.profileMenu}
+                            </li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="main-body">
+                    {!v.body}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ナビゲーションバー-->
+    <nav class="p-3 navbar navbar-dark bg-primary flex-column slds-is-active" style="height: 70px;width: 35%;">
+    <!-- ロゴ-->
+    <img src="/images/logo.png" class="rounded float-left" alt=" 東京海上日動" style="height: 40px;width: 100px;">
+  <!-- ハンバーガーマーク-->        
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent rounded" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
+    </div>
+<!-- Content -->
+<div class="d-flex w-25 bd-highlight">
+  <!--サイドナビゲーションバー -->
+  <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column">
+      <a class="nav-link" href="#item-1">Item 1</a>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link my-1" href="#item-1-1">Item 1-1</a>
+        <a class="nav-link my-1" href="#item-1-2">Item 1-2</a>
+      </nav>
+      <a class="nav-link" href="#item-2">Item 2</a>
+      <a class="nav-link" href="#item-3">Item 3</a>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+        <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+      </nav>
+  </nav>
+</div>
+</div>
+
+    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+       <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

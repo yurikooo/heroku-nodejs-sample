@@ -1,0 +1,113 @@
+html{   
+    min-height: 100vh;
+}
+
+.l-flex {
+    display: flex;
+    width: 100%;
+}
+
+.nav {
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: .1rem 1rem;
+}
+.navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+}
+.nav-header {
+    background: linear-gradient(left, #00A0E2, #00D7E8);    
+}
+.nav-header-logo {
+    flex: 1;
+}
+.nav-header-menu-icon,
+.main-header-menu-icon{
+    fill: white;    
+}
+
+.nav-body{
+    background-color: #424748;
+    color: #9A9FA0;
+    height: 100%;
+    flex:1;
+}
+
+.nav-body .slds-text-title_caps{
+    color: #9A9FA0;
+}
+
+
+.nav-header,
+.main-header {
+}
+
+
+.main {
+    width:100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body {
+    flex: 1;
+}
+
+.slds-global-header {
+    background: rgb(3, 187, 230);
+}
+.slds-nav-vertical__item.slds-is-active {
+    color: #EEE;
+    background-color: #1F2A2B;
+}
+.slds-nav-vertical__item.slds-is-active .slds-icon-text-default {
+    background-color: #FFFFFF;
+fill: white;
+}
+.slds-nav-vertical__item.slds-is-active .slds-nav-vertical__action {
+    border-top: #313332;
+    border-bottom: #313332; 
+}
+.slds-nav-vertical__item.slds-is-active::before {
+    background: #009DE6 ;
+}
+.indent-1 .slds-nav-vertical__action {padding-left: 34px;}
+.indent-2 .slds-nav-vertical__action {padding-left: 44px;}
+.indent-3 .slds-nav-vertical__action {padding-left: 54px;}
+.indent-4 .slds-nav-vertical__action {padding-left: 64px;}
+.indent-5 .slds-nav-vertical__action {padding-left: 74px;}
+
+.section,
+.item {
+    position: relative;
+    height: 42px;
+}
+.section-label {
+    padding-top: 6px;
+}
+.section-icon {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    background: black;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+.item-badge {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+}
+.item-badge .slds-badge {
+    background: linear-gradient(left, #00A0E2, #00D7E8);
+    border-radius: 5px;
+    color: white;
+    
+}
