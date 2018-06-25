@@ -149,7 +149,7 @@
 				   <v-container fluid grid-list-md>
 					<v-layout row >
 						<v-flex d-flex xs2 text-xs-center>
-							<v-card dark style="height:180px;">
+							<v-card white style="height:180px;">
 								<v-card-media
 									src="/images/joe.png"
 									height="125px"
@@ -164,20 +164,21 @@
 						        	dark style="height:180px;"
 						        >
 								    <v-layout column>
-								    	<!--
+								    	
 								        <v-flex d-flex xs2 text-xs-center>
+								        	<!--
 								        	<v-chip color="purple" text-color="white" style="width:5px;">SM</v-chip>
-											鈴木和子さんからのダッシュコール
-										</v-flex>
-									-->
+								        	-->
+								        	<%= connectResults[1].name %>
+										</v-flex>									
 										<v-flex d-flex xs2 text-xs-center>
-											「息子の保険について相談したいのですけれど、いつ来れますか」
+											 <%= connectResults[1].testtext__c %>
 										</v-flex>
 								        <v-flex d-flex xs2 text-xs-center>
-											鈴木和子さんからのダッシュコール
+											<%= connectResults[0].name %>
 										</v-flex>
 										<v-flex d-flex xs2 text-xs-center>
-											「息子の保険について相談したいのですけれど、いつ来れますか」
+											<%= connectResults[0].testtext__c %>
 										</v-flex>
 								        <v-flex d-flex xs2 text-xs-center>
 											鈴木和子さんからのダッシュコール
@@ -190,6 +191,7 @@
 								<v-flex d-flex xs3>
 				        			<v-layout column wrap justify-space-between>
 				          				<v-flex d-flex>
+				          					<!--
 							                <v-card
 							                  color="red lighten-2"
 							                  dark
@@ -200,8 +202,14 @@
 								                	未読メール  12件
 								                </v-card-text>
 								        	</v-card>
+								        -->
+										<img 
+										src="/images/1.png"
+										style="width: 10vw;height: 4vw;"
+										 />
 				        				</v-flex>
 										<v-flex d-flex>
+											<!--
 								            <v-card
 								              color="red lighten-2"
 								              dark
@@ -212,8 +220,15 @@
 													要アクション       9件
 												</v-card-text>
 											</v-card>
+								        -->
+										<img 
+										src="/images/2.png"
+										style="width: 10vw;height: 4vw;"
+										 />
+
 										</v-flex>
 										<v-flex d-flex>
+											<!--
 								            <v-card
 								              color="red lighten-2"
 								              dark
@@ -224,6 +239,12 @@
 									     			今月の目標      750千円
 									     		</v-card-text>
 						    		        </v-card>
+						    		    -->
+										<img 
+										src="/images/3.png"
+										style="width: 10vw;height: 4vw;"
+										 />
+
 						          		</v-flex>
 							        </v-layout>
 							      </v-flex>
@@ -235,10 +256,29 @@
 				</v-flex>
 			</v-layout>
 		</v-container>
-
-
-
-
+	　<!--　タブ　-->
+		<v-container>
+	    		<v-layout justify-center>
+					<img 
+					src="/images/4.png"
+					style="width: 30vw;height: 4vw;"
+					 />
+			</v-layout>
+		</v-container>
+	　<!--　モック　-->
+	    	<v-container grid-list-md fluid>
+	    		<v-layout justify-center>
+				 <v-flex xs12>
+			      <v-card fluid grid-list-md xs12>
+			      	<div>
+					<img 
+					src="/images/mock1.jpeg"
+					style="width: 80vw;"
+					 /></div>
+				　</v-card>
+				</v-flex>
+			　</v-layout>
+			</v-container>
 
 
 
