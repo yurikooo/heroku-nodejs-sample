@@ -11,224 +11,228 @@
     <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
 </head>
 <body>
+<div id="app">
+ <v-app id="example-4" standalone>
+	  <v-navigation-drawer 
+	  	permanent
+	  	fixed
+	  	app
+	  	width="250"
+	  >
+	    <v-toolbar 
+	    	flat 
+	    	class="light-blue accent-3"
+	    >
+	      <v-list class="pt-0" dense>
+			<v-list-tile align-center>
+	          <v-list-tile-title class="title">
+	            <img src="/images/header_logo.png"
+			             width="50%"
+				    />
+				    <v-btn 
+					    icon large
+					    fixed
+				    >
+				    	<v-icon>dehaze</v-icon>
+				    </v-btn>
+	          </v-list-tile-title>
+	        </v-list-tile>
+	      </v-list>
+	    </v-toolbar>
+	    <v-list dense class="pt-0 grey darken-2" dark>
+	        <template v-for="item in items">
+	          <v-layout
+	            row
+	            v-if="item.heading"
+	            align-center
+	            :key="item.heading"
+	          >
+	            <v-flex xs6>
+	              <v-subheader v-if="item.heading">
+	                {{ item.heading }}
+	              </v-subheader>
+	            </v-flex>
+	          </v-layout>
+	          <v-list-group
+	            v-else-if="item.children"
+	            v-model="item.model"
+	            :key="item.text"
+	            :prepend-icon="item.model ? item.icon : item['icon-alt']"
+	            append-icon=""
+	          >
+	            <v-list-tile slot="activator">
+	              <v-list-tile-content>
+	                <v-list-tile-title>
+	                  {{ item.text }}
+	                </v-list-tile-title>
+	              </v-list-tile-content>
+	            </v-list-tile>
+	            <v-list-tile
+	              v-for="(child, i) in item.children"
+	              :key="i"
+	            >
+	              <v-list-tile-action v-if="child.icon">
+	                <v-icon>{{ child.icon }}</v-icon>
+	              </v-list-tile-action>
+	              <v-list-tile-content>
+	                <v-list-tile-title>
+	                  {{ child.text }}
+	                </v-list-tile-title>
+	              </v-list-tile-content>
+	            </v-list-tile>
+	          </v-list-group>
+	          <v-list-tile v-else @click="" :key="item.text">
+	            <v-list-tile-action>
+	              <v-icon>{{ item.icon }}</v-icon>
+	            </v-list-tile-action>
+	            <v-list-tile-content>
+	              <v-list-tile-title>
+	                {{ item.text }}
+	              </v-list-tile-title>
+	            </v-list-tile-content>
+	          </v-list-tile>
+	        </template>
+	      </v-list>
+		</v-navigation-drawer>
 
-	<div id="app">
-    <v-app id="example-4" standalone>
-
-		  <v-navigation-drawer 
-		  	permanent
-		  	fixed
-		  	app
-		  	width="250"
-		  >
-		    <v-toolbar 
-		    	flat 
-		    	class="light-blue accent-3"
-		    >
-		      <v-list class="pt-0" dense>
-				<v-list-tile align-center>
-		          <v-list-tile-title class="title">
-		            <img src="/images/header_logo.png"
-				             width="50%"
-					    />
-					    <v-btn 
-						    icon large
-						    fixed
-					    >
-					    	<v-icon>dehaze</v-icon>
-					    </v-btn>
-		          </v-list-tile-title>
-		        </v-list-tile>
-		      </v-list>
-		    </v-toolbar>
-		    <v-list dense class="pt-0 grey darken-2" dark>
-		        <template v-for="item in items">
-		          <v-layout
-		            row
-		            v-if="item.heading"
-		            align-center
-		            :key="item.heading"
-		          >
-		            <v-flex xs6>
-		              <v-subheader v-if="item.heading">
-		                {{ item.heading }}
-		              </v-subheader>
-		            </v-flex>
-		          </v-layout>
-		          <v-list-group
-		            v-else-if="item.children"
-		            v-model="item.model"
-		            :key="item.text"
-		            :prepend-icon="item.model ? item.icon : item['icon-alt']"
-		            append-icon=""
-		          >
-		            <v-list-tile slot="activator">
-		              <v-list-tile-content>
-		                <v-list-tile-title>
-		                  {{ item.text }}
-		                </v-list-tile-title>
-		              </v-list-tile-content>
-		            </v-list-tile>
-		            <v-list-tile
-		              v-for="(child, i) in item.children"
-		              :key="i"
-		            >
-		              <v-list-tile-action v-if="child.icon">
-		                <v-icon>{{ child.icon }}</v-icon>
-		              </v-list-tile-action>
-		              <v-list-tile-content>
-		                <v-list-tile-title>
-		                  {{ child.text }}
-		                </v-list-tile-title>
-		              </v-list-tile-content>
-		            </v-list-tile>
-		          </v-list-group>
-		          <v-list-tile v-else @click="" :key="item.text">
-		            <v-list-tile-action>
-		              <v-icon>{{ item.icon }}</v-icon>
-		            </v-list-tile-action>
-		            <v-list-tile-content>
-		              <v-list-tile-title>
-		                {{ item.text }}
-		              </v-list-tile-title>
-		            </v-list-tile-content>
-		          </v-list-tile>
-		        </template>
-		      </v-list>
-			</v-navigation-drawer>
-
-			<v-toolbar permanent>
-				<v-list-tile-title class="title"  width="10">
-				</v-list-tile-title>
-				<v-list-tile>
-						<v-btn depressed small flat outline >お客様名</v-btn>
-						<v-btn depressed small flat outline >証券番号</v-btn>
-						<v-btn depressed small flat outline >情報HW</v-btn>
-						<v-btn depressed small flat outline >FAQ+</v-btn>
-				</v-list-tile>		
-				<v-list-tile>
-					<v-icon>search</v-icon>
-					<v-list-tile-title>検索</v-list-tile-title>
-					<v-btn icon>
-						<v-badge color="red" overlap>
-							<span slot="badge">6</span>
-						    	<v-icon>notifications</v-icon>
-						</v-badge>
-					</v-btn>
-					<v-btn icon>
-						<v-badge color="red" overlap>
-							<span slot="badge">22</span>
-						    	<v-icon>email</v-icon>
-						</v-badge>
-					</v-btn>
-				</v-list-tile>
-				<v-list-tile avatar>
-					<v-list-tile-avatar  left>
-					  <img src="https://randomuser.me/api/portraits/men/85.jpg" >
-					</v-list-tile-avatar>
-					<v-list-tile-content>
-					  <v-list-tile-title>山田花子<v-icon>keyboard_arrow_down</v-icon></v-list-tile-title>
-					</v-list-tile-content>
-				</v-list-tile>
-			</v-toolbar>
-			</br>
+		<v-toolbar permanent>
+			<v-list-tile-title class="title"  width="10">
+			</v-list-tile-title>
+			<v-list-tile>
+					<v-btn depressed small flat outline >お客様名</v-btn>
+					<v-btn depressed small flat outline >証券番号</v-btn>
+					<v-btn depressed small flat outline >情報HW</v-btn>
+					<v-btn depressed small flat outline >FAQ+</v-btn>
+			</v-list-tile>		
+			<v-list-tile>
+				<v-icon>search</v-icon>
+				<v-list-tile-title>検索</v-list-tile-title>
+				<v-btn icon>
+					<v-badge color="red" overlap>
+						<span slot="badge">6</span>
+					    	<v-icon>notifications</v-icon>
+					</v-badge>
+				</v-btn>
+				<v-btn icon>
+					<v-badge color="red" overlap>
+						<span slot="badge">22</span>
+					    	<v-icon>email</v-icon>
+					</v-badge>
+				</v-btn>
+			</v-list-tile>
+			<v-list-tile avatar>
+				<v-list-tile-avatar  left>
+				  <img src="https://randomuser.me/api/portraits/men/85.jpg" >
+				</v-list-tile-avatar>
+				<v-list-tile-content>
+				  <v-list-tile-title>山田花子<v-icon>keyboard_arrow_down</v-icon></v-list-tile-title>
+				</v-list-tile-content>
+			</v-list-tile>
+		</v-toolbar>
+		</br>
 
 <!-- 本番////////////////////////////////////////////////////////////////-->
 
-		    <v-content>
-		    	<v-container grid-list-md fluid>
-					<div>
-						<h3>山田花子さんのダッシュボード</h3>
-						<span>最新情報</span>
-						<div style="text-align:right;color:gray;">
-							最終ログイン：2018/07/02 09:51:52
-						</div>
+	    <v-content>
+	    	<v-container grid-list-md fluid>
+				<div>
+					<h3>山田花子さんのダッシュボード</h3>
+					<span>最新情報</span>
+					<div style="text-align:right;color:gray;">
+						最終ログイン：2018/07/02 09:51:52
 					</div>
+				</div>
 
-		    		<v-layout>
-			            <v-card fluid grid-list-md >
-							<v-container fluid grid-list-md>
-							    <v-layout row >
-							        <v-flex d-flex xs2 text-xs-center>
-							        <v-card dark style="height:180px;">
-							          <v-card-media
-										src="/images/joe.png"
-										height="125px"
-										contain
-										></v-card-media>
-							          <v-card-text>今日のジョー</v-card-text>
-							        </v-card>
-							      </v-flex>
-							      	
-							      <v-flex d-flex xs10>
-							        <v-card 
-							        	color="purple"
-							        	dark style="height:180px;"
-							        >
-									    <v-layout column wrap>
-									        <v-flex d-flex xs2 text-xs-center>
-												鈴木和子さんからのダッシュコール
-											</v-flex>
-											<v-flex d-flex xs2 text-xs-center>
-												「息子の保険について相談したいのですけれど、いつ来れますか」
-											</v-flex>
-									        <v-flex d-flex xs2 text-xs-center>
-												鈴木和子さんからのダッシュコール
-											</v-flex>
-											<v-flex d-flex xs2 text-xs-center>
-												「息子の保険について相談したいのですけれど、いつ来れますか」
-											</v-flex>
-									        <v-flex d-flex xs2 text-xs-center>
-												鈴木和子さんからのダッシュコール
-											</v-flex>
-											<v-flex d-flex xs2 text-xs-center>
-												「息子の保険について相談したいのですけれど、いつ来れますか」
-											</v-flex>
-										</v-layout>
-							        </v-card>
-							      <v-flex d-flex>
-							        <v-layout column wrap>
-							          <v-flex d-flex>
+	    		<v-layout justify-center>
+				 <v-flex xs12>
+			      <v-card fluid grid-list-md xs12>
+				   <v-container fluid grid-list-md>
+					<v-layout row >
+						<v-flex d-flex xs2 text-xs-center>
+							<v-card dark style="height:180px;">
+								<v-card-media
+									src="/images/joe.png"
+									height="125px"
+									contain
+									round
+								></v-card-media>
+								<v-card-text>今日のジョー</v-card-text>
+							</v-card>
+						</v-flex>
+							<v-flex d-flex xs10>
+						        <v-card 
+						        	dark style="height:180px;"
+						        >
+								    <v-layout column>
+								        <v-flex d-flex xs2 text-xs-center>
+								        	<v-chip color="purple" text-color="white" style="height:180px;>SM</v-chip>
+											鈴木和子さんからのダッシュコール
+										</v-flex>
+										<v-flex d-flex xs2 text-xs-center>
+											「息子の保険について相談したいのですけれど、いつ来れますか」
+										</v-flex>
+								        <v-flex d-flex xs2 text-xs-center>
+											鈴木和子さんからのダッシュコール
+										</v-flex>
+										<v-flex d-flex xs2 text-xs-center>
+											「息子の保険について相談したいのですけれど、いつ来れますか」
+										</v-flex>
+								        <v-flex d-flex xs2 text-xs-center>
+											鈴木和子さんからのダッシュコール
+										</v-flex>
+										<v-flex d-flex xs2 text-xs-center>
+											「息子の保険について相談したいのですけれど、いつ来れますか」
+										</v-flex>
+									</v-layout>
+						        </v-card>
+								<v-flex d-flex xs3>
+				        			<v-layout column wrap justify-space-between>
+				          				<v-flex d-flex>
 							                <v-card
 							                  color="red lighten-2"
 							                  dark
 							                  style="height:50px;"
 							                >
-							                <v-card-text><v-icon>email</v-icon>未読メール12件
-							                </v-card-text>
-							            </v-card>
-							          </v-flex>
-
-							          <v-flex d-flex>
-							            <v-card
-							              color="red lighten-2"
-							              dark
-							              style="height:50px;"
-							            >
-							              <v-card-text><v-icon>notifications</v-icon>要アクション       9件</v-card-text>
-							            </v-card>
-							          </v-flex>
-
-							          <v-flex d-flex>
-							            <v-card
-							              color="red lighten-2"
-							              dark
-							              style="height:50px;"
-							            >
-							              <v-card-text><v-icon>star</v-icon>今月の目標      750千円</v-card-text>
-							            </v-card>
-							          </v-flex>
-
+								                <v-card-text>
+								                	<v-icon>email</v-icon>
+								                	未読メール  12件
+								                </v-card-text>
+								        	</v-card>
+				        				</v-flex>
+										<v-flex d-flex>
+								            <v-card
+								              color="red lighten-2"
+								              dark
+								              style="height:50px;"
+								            >
+												<v-card-text>
+													<v-icon>notifications</v-icon>
+													要アクション       9件
+												</v-card-text>
+											</v-card>
+										</v-flex>
+										<v-flex d-flex>
+								            <v-card
+								              color="red lighten-2"
+								              dark
+								              style="height:50px;"
+								            >
+									     		<v-card-text>
+									     			<v-icon>star</v-icon>
+									     			今月の目標      750千円
+									     		</v-card-text>
+						    		        </v-card>
+						          		</v-flex>
 							        </v-layout>
 							      </v-flex>
-
-							        </v-layout>
-							      </v-flex>
-							  </v-layout>
-							</v-container>
-						</v-card>
-				</v-layout>
-			</v-container>
+						        </v-layout>
+						      </v-flex>
+						  </v-layout>
+						</v-container>
+					</v-card>
+				</v-flex>
+			</v-layout>
+		</v-container>
 
 
 
@@ -237,58 +241,58 @@
 
 
 <!-- ////////////////////////////////////////////////////////////////-->
-		    	<v-container grid-list-md fluid>
-		    	<v-layout row wrap>
-		    		<v-flex>
-				    	<div>
-				    		<h3>山田花子さんのダッシュボード</h3>
-				    		<span>最新情報</span>
-				    	</div>
-			            <v-card class="black--text">
-			              <v-container fluid grid-list-xl>
-			                <v-layout row>
-			                  <v-flex xs4 text-xs-center>
-			                    <v-card-media
-			                      src="/images/joe.png"
-			                      height="125px"
-			                      contain
-			                    ></v-card-media>
-			                    今日のジョー
-			                  </v-flex>
-			                  <v-flex xs15>
-			                    <div> 
-			                      <div class="headline">鈴木和子さんからのダッシュコール</div>
-			                      <div>「息子の保険について相談したいのですけれど、いつ来れますか」</div>
-			                    </div>
+	    	<v-container grid-list-md fluid>
+	    	<v-layout row wrap>
+	    		<v-flex>
+			    	<div>
+			    		<h3>山田花子さんのダッシュボード</h3>
+			    		<span>最新情報</span>
+			    	</div>
+		            <v-card class="black--text">
+		              <v-container fluid grid-list-xl>
+		                <v-layout row>
+		                  <v-flex xs4 text-xs-center>
+		                    <v-card-media
+		                      src="/images/joe.png"
+		                      height="125px"
+		                      contain
+		                    ></v-card-media>
+		                    今日のジョー
+		                  </v-flex>
+		                  <v-flex xs15>
+		                    <div> 
+		                      <div class="headline">鈴木和子さんからのダッシュコール</div>
+		                      <div>「息子の保険について相談したいのですけれど、いつ来れますか」</div>
+		                    </div>
+						  </v-flex>
+		                  <v-flex xs15>
+		                    <div>
+		                      <div class="headline mb-0">知っ得情報</div>
+		                      <div>
+		                      	<%= connectResults[0].testtext__c %>
+		                      </div>
+		                  </v-flex>
+		                  <v-flex xs7>
+							<v-jumbotron :gradient="gradient" dark>
+							<v-layout align-center>
+							  <v-flex text-xs-center>
+										<v-icon>email</v-icon>未読メール　　　　　　　　　　　12件
 							  </v-flex>
-			                  <v-flex xs15>
-			                    <div>
-			                      <div class="headline mb-0">知っ得情報</div>
-			                      <div>
-			                      	<%= connectResults[0].testtext__c %>
-			                      </div>
-			                  </v-flex>
-			                  <v-flex xs7>
-								<v-jumbotron :gradient="gradient" dark>
-								<v-layout align-center>
-								  <v-flex text-xs-center>
-											<v-icon>email</v-icon>未読メール　　　　　　　　　　　12件
-								  </v-flex>
-								</v-layout>
-								</v-jumbotron>
-			                  </v-flex>
-						</v-layout>
-			          </v-container>
- 
+							</v-layout>
+							</v-jumbotron>
+		                  </v-flex>
+					</v-layout>
+		          </v-container>
 
-							</div>
-					    </v-card>
-					</v-flex>
-				</v-layout>
-			</v-container>
-		    </v-content>
-		</v-app>
-	</div>
+
+						</div>
+				    </v-card>
+				</v-flex>
+			</v-layout>
+		</v-container>
+	    </v-content>
+	</v-app>
+</div>
 
 
 
