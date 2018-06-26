@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 /*
  * Jobs Landing Page
  */
-client.query('SELECT * FROM salesforce.HerokuConnectTest__c order by salesforce.HerokuConnectTest__c.createddate desc limit 2', (err,res)=>{
+client.query('SELECT * FROM salesforce.HerokuConnectTest__c order by salesforce.HerokuConnectTest__c.id desc limit 2', (err,res)=>{
     console.log("_________________ ")
     console.log(res.rows[0])
     console.log(res.rows[1])
@@ -46,7 +46,7 @@ client.query('SELECT * FROM salesforce.HerokuConnectTest__c order by salesforce.
 });
 
 app.get('/',function (req, res){
-    var query = 'SELECT * FROM salesforce.HerokuConnectTest__c order by salesforce.HerokuConnectTest__c.createddate desc limit 2';
+    var query = 'SELECT * FROM salesforce.HerokuConnectTest__c order by salesforce.HerokuConnectTest__c.id desc limit 2';
     var result = [];
     client.query(query, function(err, result){
         console.log("Jobs Query Result Count: " + result.rows);
