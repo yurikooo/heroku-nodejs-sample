@@ -62,7 +62,7 @@
 	          >
 	            <v-list-tile slot="activator">
 	              <v-list-tile-content>
-	                <v-list-tile-title>
+	                <v-list-tile-title style="font-family:'ヒラギノ角ゴシック';font-size: 150%;">
 	                  {{ item.text }}
 	                </v-list-tile-title>
 	              </v-list-tile-content>
@@ -75,7 +75,7 @@
 	                <v-icon>{{ child.icon }}</v-icon>
 	              </v-list-tile-action>
 	              <v-list-tile-content>
-	                <v-list-tile-title>
+	                <v-list-tile-titlev style="font-family:'ヒラギノ角ゴシック';font-size: 150%;">
 	                  {{ child.text }}
 	                </v-list-tile-title>
 	              </v-list-tile-content>
@@ -86,7 +86,7 @@
 	              <v-icon>{{ item.icon }}</v-icon>
 	            </v-list-tile-action>
 	            <v-list-tile-content>
-	              <v-list-tile-title>
+	              <v-list-tile-title style="font-family:'ヒラギノ角ゴシック';font-size: 150%;">
 	                {{ item.text }}
 	              </v-list-tile-title>
 	            </v-list-tile-content>
@@ -99,15 +99,15 @@
 			<v-list-tile-title class="title"  width="10">
 			</v-list-tile-title>
 			<v-list-tile>
-					<v-btn depressed small flat outline >お客様名</v-btn>
-					<v-btn depressed small flat outline >証券番号</v-btn>
-					<v-btn depressed small flat outline >情報HW</v-btn>
-					<v-btn depressed small flat outline >FAQ+</v-btn>
+					<v-btn depressed small flat outline style="font-family:'ヒラギノ角ゴシック';font-size: 130%;">お客様名</v-btn>
+					<v-btn depressed small flat outline style="font-family:'ヒラギノ角ゴシック';font-size: 130%;">証券番号</v-btn>
+					<v-btn depressed small flat outline style="font-family:'ヒラギノ角ゴシック';font-size: 130%;">情報HW</v-btn>
+					<v-btn depressed small flat outline style="font-family:'ヒラギノ角ゴシック';font-size: 130%;">FAQ+</v-btn>
 			</v-list-tile>		
 			<v-list-tile>
 				<v-icon>search</v-icon>
-				<v-list-tile-title>検索</v-list-tile-title>
-				<v-btn icon>
+				<v-list-tile-title style="font-family:'ヒラギノ角ゴシック';font-size: 150%;">検索</v-list-tile-title>
+				<v-btn icon >
 					<v-badge color="red" overlap>
 						<span slot="badge">6</span>
 					    	<v-icon>notifications</v-icon>
@@ -125,20 +125,19 @@
 				  <img src="/images/prf.jpg" >
 				</v-list-tile-avatar>
 				<v-list-tile-content>
-				  <v-list-tile-title>山田花子<v-icon>keyboard_arrow_down</v-icon></v-list-tile-title>
+				  <v-list-tile-title style="font-family:'ヒラギノ角ゴシック';font-size: 150%;">山田花子<v-icon>keyboard_arrow_down</v-icon></v-list-tile-title>
 				</v-list-tile-content>
 			</v-list-tile>
 		</v-toolbar>
 		</br>
 
 <!-- 本番////////////////////////////////////////////////////////////////-->
-
-	    <v-content>
+	    <v-content style="font-family:'ヒラギノ角ゴシック';font-size: 130%;">
 	    	<v-container grid-list-md fluid>
-				<div>
+				<div >
 					<h3>山田花子さんのダッシュボード</h3>
 					<span>最新情報</span>
-					<div style="text-align:right;color:gray;">
+					<div style="text-align:right;color:gray;font-family:'ヒラギノ角ゴシック';">
 						最終ログイン：2018/07/02 09:51:52
 					</div>
 				</div>
@@ -149,7 +148,7 @@
 				   <v-container fluid grid-list-md>
 					<v-layout row >
 						<v-flex d-flex xs2 text-xs-center>
-							<v-card white style="height:180px;">
+							<v-card white style="height:250px;">
 								<v-card-media
 									src="/images/joe.png"
 									height="125px"
@@ -159,82 +158,82 @@
 								<v-card-text>今日のジョー</v-card-text>
 							</v-card>
 						</v-flex>
-							<v-flex d-flex xs10>
-						        <v-card 
-						        	dark style="height:180px;"
-						        >
-								    <v-layout column>
-										 <v-flex xs12 style="align-items:center;justify-content: center;">
-											<img 
-											src="/images/5.png"
-											style="width: 30px;"
-											 />
-										鈴木和子さんからのダッシュコール
-										</v-flex>
-										<v-flex d-flex xs2 text-xs-center>
-											「息子の保険について相談したいのですけれど、いつ来れますか」
-										</v-flex>
-										<!-- 知っ得情報-->
-										<v-flex d-flex xs2 text-xs-center >
-								        	<span class="group pa-10 teal">
-								        	<%= connectResults[0].name %>
-								        </span>
-										</v-flex>									
-										<v-flex d-flex xs2 text-xs-center>
-											 <%= connectResults[0].testtext__c %>
-										</v-flex>
-								        <v-flex d-flex xs2 text-xs-center>
-											<%= connectResults[1].name %>
-										</v-flex>
-										<v-flex d-flex xs2 text-xs-center>
-											<%= connectResults[1].testtext__c %>
-										</v-flex>
-									</v-layout>
-						        </v-card>
+						<v-flex d-flex xs10>
+							<v-card 
+								style="height:250px;"
+							>
+						    <v-layout column >
+								 <v-flex xs12 style="align-items:center;justify-content: center;">
+									<img 
+									src="/images/5.png"
+									style="width: 30px;"
+									 />
+								鈴木和子さんからのダッシュコール
+								</v-flex>
+								<v-flex d-flex xs2 text-xs-start>
+									「息子の保険について相談したいのですけれど、いつ来れますか」
+								</v-flex>
+							</v-layout>
+							<!-- 知っ得情報 タイトル-->
+							<v-layout row>
+						        <v-flex d-flex xs2 text-xs-center >
+									<span style="border-radius: 10px;background-color:#08E086;color: white;font-weight: bold;">
+							        	<%= connectResults[0].name %>
+							        </span>
+								</v-flex>
+							</v-layout>
+							<!-- 知っ得情報 ダイアログ-->
+							<v-flex d-flex xs12 text-xs-center>
+								<v-layout row>    
+									<v-dialog v-model="dialog" max-width="700">
+									  	<v-btn slot="activator" style="font-family:'ヒラギノ角ゴシック';font-size: 100%;"><%= connectResults[0].testtext__c %></v-btn> 
+									  	<v-card>
+										    <v-card-title class="headline">お知らせ更新</v-card-title>
+										    <v-card-text>
+												<v-flex xs12>
+										            <v-text-field label="<%= connectResults[0].testtext__c %>" required></v-text-field>
+										          </v-flex>
+										    </v-card-text>
+										    <v-card-actions>
+										      <v-spacer></v-spacer>
+										      <v-card-actions>
+												<v-btn color="blue darken-1" flat @click.stop="dialog = false">Close</v-btn>
+												<v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
+										    </v-card-actions>
+										</v-card>
+									</v-dialog>
+								</v-layout>
+							</v-flex>
 
-   <v-layout row justify-center>
-      <v-dialog v-model="dialog" persistent max-width="500px">
-        <v-btn slot="activator" color="primary" dark>更新</v-btn>
-        <v-card>
-          <v-card-title>
-            <span class="headline">User Profile</span>
-          </v-card-title>
-          <v-card-text>
-            <v-container grid-list-md>
-              <v-layout wrap>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field label="Legal first name" required></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field
-                    label="Legal last name"
-                    hint="example of persistent helper text"
-                    persistent-hint
-                    required
-                  ></v-text-field>
-                </v-flex>
-                <v-flex xs12>
-                  <v-text-field label="Email" required></v-text-field>
-                </v-flex>
-                <v-flex xs12>
-                  <v-text-field label="Password" type="password" required></v-text-field>
-                </v-flex>
-              </v-layout>
-            </v-container>
-            <small>*indicates required field</small>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
-            <v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-layout>
-
+							<!-- 知っ得情報-->
+							<v-layout row>
+						        <v-flex d-flex xs2 text-xs-center>
+									<span style="border-radius: 10px;background-color:#00BFFF;color: white;font-weight: bold;">
+							        	<%= connectResults[1].name %>
+							        </span>
+								</v-flex>
+							</v-layout>
+							<v-flex d-flex xs2 text-xs-center>
+								<v-layout row>
+									<v-dialog v-model="dialog">
+									 <v-btn slot="activator" style="font-family:'ヒラギノ角ゴシック';font-size: 100%;"><%= connectResults[1].testtext__c %></v-btn>
+									  	<v-card>
+										    <v-card-title class="headline">お知らせ更新</v-card-title>
+										    <v-card-text>
+												<v-flex xs12>
+										            <v-text-field label="Email" required></v-text-field>
+										          </v-flex>
+										    </v-card-text>
+										    <v-card-actions>
+										      <v-spacer></v-spacer>
+												<v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
+												<v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
+										    </v-card-actions>
+										</v-card>
+									</v-dialog>
+								</v-layout>
+							</v-flex>
+					</v-card>
 								<v-flex d-flex xs3>
 				        			<v-layout column wrap justify-space-between>
 				          				<v-flex d-flex>
@@ -252,7 +251,7 @@
 								        -->
 										<img 
 										src="/images/1.png"
-										style="width: 10vw;height: 4vw;"
+										style="width: 8vw;height: 3vw;"
 										 />
 				        				</v-flex>
 										<v-flex d-flex>
@@ -270,7 +269,7 @@
 								        -->
 										<img 
 										src="/images/2.png"
-										style="width: 10vw;height: 4vw;"
+										style="width: 8vw;height: 3vw;"
 										 />
 
 										</v-flex>
@@ -289,7 +288,7 @@
 						    		    -->
 										<img 
 										src="/images/3.png"
-										style="width: 10vw;height: 4vw;"
+										style="width: 8vw;height: 3vw;"
 										 />
 
 						          		</v-flex>
@@ -303,12 +302,13 @@
 				</v-flex>
 			</v-layout>
 		</v-container>
+
 	　<!--　タブ　-->
 		<v-container>
 	    		<v-layout justify-center>
 					<img 
 					src="/images/4.png"
-					style="width: 30vw;height: 4vw;"
+					style="width: 30%;height: 30%;"
 					 />
 			</v-layout>
 		</v-container>
@@ -316,70 +316,18 @@
 	　<!--　モック　-->
 	    	<v-container grid-list-md fluid>
 	    		<v-layout justify-center>
-				 <v-flex xs12>
+				 <v-flex xs12 text-xs-center>
 			      <v-card fluid grid-list-md xs12>
 			      	<div>
 					<img 
 					src="/images/mock1.jpeg"
-					style="width: 80vw;"
+					style="width: 60%;"
 					 /></div>
 				　</v-card>
 				</v-flex>
 			　</v-layout>
 			</v-container>
 
-
-
-<!-- ////////////////////////////////////////////////////////////////-->
-	    	<v-container grid-list-md fluid>
-	    	<v-layout row wrap>
-	    		<v-flex>
-			    	<div>
-			    		<h3>山田花子さんのダッシュボード</h3>
-			    		<span>最新情報</span>
-			    	</div>
-		            <v-card class="black--text">
-		              <v-container fluid grid-list-xl>
-		                <v-layout row>
-		                  <v-flex xs4 text-xs-center>
-		                    <v-card-media
-		                      src="/images/joe.png"
-		                      height="125px"
-		                      contain
-		                    ></v-card-media>
-		                    今日のジョー
-		                  </v-flex>
-		                  <v-flex xs15>
-		                    <div> 
-		                      <div class="headline">鈴木和子さんからのダッシュコール</div>
-		                      <div>「息子の保険について相談したいのですけれど、いつ来れますか」</div>
-		                    </div>
-						  </v-flex>
-		                  <v-flex xs15>
-		                    <div>
-		                      <div class="headline mb-0">知っ得情報</div>
-		                      <div>
-		                      	<%= connectResults[0].testtext__c %>
-		                      </div>
-		                  </v-flex>
-		                  <v-flex xs7>
-							<v-jumbotron :gradient="gradient" dark>
-							<v-layout align-center>
-							  <v-flex text-xs-center>
-										<v-icon>email</v-icon>未読メール　　　　　　　　　　　12件
-							  </v-flex>
-							</v-layout>
-							</v-jumbotron>
-		                  </v-flex>
-					</v-layout>
-		          </v-container>
-
-
-						</div>
-				    </v-card>
-				</v-flex>
-			</v-layout>
-		</v-container>
 	    </v-content>
 	</v-app>
 </div>
@@ -392,7 +340,6 @@
 	  el: '#app',
 	  data: () => ({
 		  gradient: 'to top, #7B1FA2, #E1BEE7',
-	      dialog: false,
 	      drawer: null,
 	      items: [
 	        { icon: 'keyboard_arrow_down', text: '業務' },
@@ -431,20 +378,18 @@
 	        { icon: 'help', text: 'Help' },
 	        { icon: 'phonelink', text: 'App downloads' },
 	        { icon: 'keyboard', text: 'Go to the old version' }
-	      ]
-	    }),
+	      ],
+		    return: {
+	    	  dialog: false
+		  }
+		}),
 	    props: {
 	      source: String
-	    }
+	    },
 	})
 	</script>
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-	<script>
-	new Vue({ el: '#app' })
-	</script>
-
-
 
     </body>
 </html>
